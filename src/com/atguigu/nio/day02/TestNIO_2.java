@@ -1,20 +1,14 @@
 package com.atguigu.nio.day02;
 
+import org.junit.Test;
+
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.channels.SeekableByteChannel;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
-import java.nio.file.LinkOption;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.nio.file.StandardOpenOption;
+import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.DosFileAttributeView;
-
-import org.junit.Test;
 
 public class TestNIO_2 {
 	
@@ -29,7 +23,7 @@ public class TestNIO_2 {
 			inChannel.read(buf);
 			
 		}catch(IOException e){
-			
+			e.printStackTrace();
 		}
 	}
 	
@@ -149,10 +143,10 @@ public class TestNIO_2 {
 	
 	@Test
 	public void test1(){
-		Path path = Paths.get("e:/", "nio/hello.txt");
+		Path path = Paths.get("d:/", "nio/hello.txt");
 		
 		System.out.println(path.endsWith("hello.txt"));
-		System.out.println(path.startsWith("e:/"));
+		System.out.println(path.startsWith("d:/"));
 		
 		System.out.println(path.isAbsolute());
 		System.out.println(path.getFileName());
